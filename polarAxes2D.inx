@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<inkscape-extension xmlns="http://www.inkscape.org/namespace/inkscape/extension">
+  <_name>polar axes 2D</_name>
+  <id>fsmMLK.polarAxes2D</id>
+  <dependency type="executable" location="extensions">polarAxes2D.py</dependency>
+  <dependency type="executable" location="extensions">inkex.py</dependency>
+  <dependency type="executable" location="extensions">inkscapeMadeEasy_Base.py</dependency>
+  <dependency type="executable" location="extensions">inkscapeMadeEasy_Draw.py</dependency>
+  <dependency type="executable" location="extensions">inkscapeMadeEasy_Plot.py</dependency>
+    <param name="tab" type="notebook">
+        <page name="Polar cartesian axis" appearance="minimal" _gui-text="R axis">
+            <param name="rLabel"      type="string"  _gui-text="R axis label (LaTeX is supported):">$R$</param>
+            <param name="rMin"    type="float"   min="0"    max="100000" precision="3"   _gui-text="R min:">0</param>
+            <param name="rMax"    type="float"   min="0"    max="100000" precision="3"    _gui-text="R max:">5</param>
+            <param name="rLog10scale" type="boolean"  _gui-text="Logaritmic R axis">0</param>  
+            <param name="rGrid"       type="boolean"  _gui-text="Add grid to R axis">1</param>
+
+            <param name="rTicks"      type="boolean" _gui-text="Add ticks to R axis">1</param>
+            <param name="rTickStep"   type="float"  min="0"    max="2000" precision="3" _gui-text="R tick step (linear axis only):">1</param>
+            <param name="rScale"      type="float"   min="5"    max="2000" precision="1"   _gui-text="R tick length (or the length of 1 decade if using log scale):">20</param>
+            <param name="rExtraText"  type="string" _gui-text="R tick sufix value:"></param>
+
+            <param name="generalAspectFactor"    type="float"  precision="2"  min="0.01"    max="100"    _gui-text="General aspect factor (default: 1.0)">1</param>
+        </page>
+        <page name="Polar cartesian axis" appearance="minimal" _gui-text="Theta axis">
+
+            <param name="tMin"    type="float"   min="0"    max="360" precision="0"    _gui-text="Theta min (deg):">0</param>
+            <param name="tMax"    type="float"   min="0"    max="360" precision="0"    _gui-text="Theta max (deg):">360</param> 
+            <param name="tGrid"       type="boolean"  _gui-text="Add grid to Theta axis">1</param>
+            <param name="tTicks"      type="boolean" _gui-text="Add ticks to Theta axis">1</param>
+            <param name="tTickStep"   type="float"  min="0"    max="2000" precision="3" _gui-text="Theta tick step (deg):">45</param>
+
+        </page>
+        <page name="Help" _gui-text="Help">
+            <_param name="instructions" type="description" xml:space="preserve">
+ You can add LaTeX expressions as labels. If you need to use mathematical environment, encloses the text with $...$.
+ 
+ The argument 'R tick sufix value' must be compatible with mathematical environemnts. You don't need to use $...$
+</_param>
+        </page>
+    </param>
+    <effect>
+        <object-type>all</object-type>
+        <effects-menu>
+            <submenu _name="fsmMLK">
+                <submenu name="Plot 2D"/>
+            </submenu>
+        </effects-menu>
+    </effect>
+    <script>
+      <command reldir="extensions" interpreter="python">polarAxes2D.py</command>
+    </script>
+</inkscape-extension>
