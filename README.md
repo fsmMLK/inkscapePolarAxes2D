@@ -40,7 +40,7 @@ inkscape/extensions/
 
 This extension is presented in two tabs, **R axis** and  **Theta axis**. They are used to configure independently the axes of your chart. The tabs have most of the same control elements, with the exception of a few elements exclusive to R axis.
 
-<img src="docs/images/Config_Raxis.png" width="600px"/>
+<img src="docs/images/Config_Raxis.png" width="700px"/>
 
 <img src="docs/images/Config_Taxis.png" width="600px"/>
 
@@ -82,11 +82,11 @@ Ex: limits from 0 to 2, with tick step of 0.5 will produce ticks at 0, 0.5, 1, 1
    - *linear scale:* The distance between ticks in px.
    - *logarithmic scale:* The size of each decade in px.
 
-<img src="docs/images/TickLength.png" width="350px"/>
+<img src="docs/images/TickLength.png" width="500px"/>
 
 **R tick suffix value (R axis only):** Optional extra suffix to be added to the tick values. You can use any LaTeX text/commands valid in mathematical environment $...$. You don't have to enclose your text between $...$. You don't have to escape any backslashes.
 
-<img src="docs/images/TickSuffix.png" width="800px"/>
+<img src="docs/images/TickSuffix.png" width="500px"/>
 
 **General aspect factor:** (present in R axis tab only) General aspect ratio between line width and text width. I designed this extension to have an overall aspect ratio that looked nice to my eyes. It is a function of R tick length. With this control you can scale both line widths and text height to fit your needs.
 
