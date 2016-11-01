@@ -36,6 +36,18 @@ inkscape/extensions/
             `-- polarAxes2D.inx
 ```
 
+**Disabling LaTeX support of inkscapeMadeEasy**
+
+Many of the methods implemented in inkscapeMadeEasy project use LaTeX to generate text. To this end I decided to employ the excellent extension **textext** from Pauli Virtanen  <https://pav.iki.fi/software/textext/>. 
+
+LaTeX support via textext extension requires LaTeX typesetting system in your computer (it's free and awesome! =] ), together with a few python modules (pygtk and Tkinter among others). The later might be a problem for non-Linux systems (precompiled inkscape for Windows as OS X don't come with them).
+
+Since many people don't use LaTeX and/or don't have it installed, inkscapeMadeEasy's LaTeX support is now optional. **By default, LaTeX support is ENABLED.**
+
+Please refer to <https://fsmmlk.github.io/inkscapeMadeEasy/#installation-and-requirements> on how to easily disable LaTeX support.
+
+.. warning:: Since disabling LaTeX support is a new feature, this project was not yet extensively checked for misplacements/errors when this support is disabled. Please report any issues you find.
+
 # Usage
 
 This extension is presented in two tabs, **R axis** and  **Theta axis**. They are used to configure independently the axes of your chart. The tabs have most of the same control elements, with the exception of a few elements exclusive to R axis.
@@ -75,6 +87,7 @@ Ex: limits from 0 to 2, with tick step of 0.5 will produce ticks at 0, 0.5, 1, 1
 > Note: The ticks will radiate from the origin R=0 or Theta=0 unless the origin does not lie within the limits. In such cases, the ticks will radiate  from the lower limit.
 >
 > Examples
+>
 > <img src="docs/images/TickStep.png" width="600px"/>
 
 

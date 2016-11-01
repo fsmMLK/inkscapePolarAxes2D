@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <inkscape-extension xmlns="http://www.inkscape.org/namespace/inkscape/extension">
-  <_name>polar axes 2D</_name>
+  <_name>Polar axes</_name>
   <id>fsmMLK.polarAxes2D</id>
   <dependency type="executable" location="extensions">polarAxes2D.py</dependency>
   <dependency type="executable" location="extensions">inkex.py</dependency>
@@ -43,7 +43,9 @@
         <object-type>all</object-type>
         <effects-menu>
             <submenu _name="fsmMLK">
-                <submenu name="Plot 2D"/>
+                <submenu name="Plot 2D">
+                     <submenu name="Polar"/>
+                </submenu>
             </submenu>
         </effects-menu>
     </effect>
