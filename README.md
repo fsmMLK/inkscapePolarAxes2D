@@ -50,6 +50,8 @@ Please refer to <https://fsmmlk.github.io/inkscapeMadeEasy/#installation-and-req
 
 # Usage
 
+The extension can be found under `extensions > fsmMLK > Plot 2D > Polar` menu.
+'
 This extension is presented in two tabs, **R axis** and  **Theta axis**. They are used to configure independently the axes of your chart. The tabs have most of the same control elements, with the exception of a few elements exclusive to R axis.
 
 <img src="docs/images/Config_Raxis.png" width="700px"/>
