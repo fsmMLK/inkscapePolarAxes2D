@@ -1,5 +1,5 @@
 # polarAxes2D
-Inkscape extension to assist creating 2D polar axes
+This extension will assist you creating Polar axes in [Inkscape](https://inkscape.org/).
 
 
 <img src="docs/images/Examples.png" width="900px"/>
@@ -8,80 +8,147 @@ Inkscape extension to assist creating 2D polar axes
 
 The main features are
 
- - linear and log10 scales for R axis
- - optional grid lines in R and Theta directions
- - adjustable tick mark intervals and sizes
- - LaTeX support
+ - Linear and log10 scales for R axis
+ - Optional grid lines in R and Theta directions
+ - Adjustable tick mark intervals and sizes
+ - Optional LaTeX support
+
+## Current and older versions
+
+Compatibility table
+
+|  Inkscape        |  polarAxes2D | inkscapeMadeEasy | Receive updates?|
+|------------------|-----------------|------------------|-----------------|
+|       1.0        | 1.0 (latest)    |   1.0 (latest)   | YES             |
+| 0.48, 0.91, 0.92 | 0.9x (obsolete) |  0.9x (obsolete) | NO              |
+
+
+**Latest version:** The latest version of **polarAxes2D** is **1.0**. This version is compatible with Inkscape 1.0 and up only. It is **incompatible** with older Inkscape versions!
+
+**Older versions:** If you have an older version of Inkscape, please use the files under the folder **0.9x** on Github.
+
+**Important: Only the latest version will receive updates, new features, and bug fixes! The usage section in this documentation describes the latest version. In older versions, the disposition of the elements in the plugin's screen might be different. Some features might not be present or have different behavior.**
 
 # Installation and requirements
 
-This extension was partially developed in Inkscape 0.48 and partially in 0.91 in Linux (Kubuntu 12.04 and 14.04). It should work on both versions of Inkscape. Also, they should work in different OSs too as long as all requirements are installed.
+Installation procedures for latest and older versions are described below.
 
-This extension requires another extension to run, inkscapeMadeEasy <https://github.com/fsmMLK/inkscapeMadeEasy>, which contains several backstage methods and classes.
+## Requirements (all versions)
 
-In order to use polarAxes2D extension, you must also download inkscapeMadeEasy files and put them inside Inkscape's extension directory. Please refer to inkscapeMadeEasy installation instructions. In the end you must have the following files and directories in your Inkscape extension directory.
+- You will need [inkscapeMadeEasy](https://github.com/fsmMLK/inkscapeMadeEasy) plugin installed. Check the compatibility table above to know the version you need.
+
+## Installation procedure (v1.0 only)
+
+**polarAxes2D** was developed using Inkscape 1.0 in Linux (Kubuntu 18.04). It should work in different OSs too as long as all requirements are met.
+
+1. Install [inkscapeMadeEasy](https://github.com/fsmMLK/inkscapeMadeEasy), **version 1.0** (latest). Follow the instructions in the manual page. **Note:** LaTeX text is used in **polarAxes2D** if the support is activated (nicer results), otherwise regular text elements will be used.
+
+2. **polarAxes2D** installation
+
+    1. Go to Inkscape's extension directory with a file browser. Your inkscape extension directory can be accessed by opening Inkscape and selecting ``Edit > Preferences > System``. Look for the item **User Extensions**  field. There is a button on the right of the field  that will open a file explorer window in that specific folder.
+
+    2. Create a subfolder in the extension directory with the name ``polarAxes2D``. **Important:**  Be careful with upper and lower case letters. You must write as presented above.
+
+    3. Download **polarAxes2D** files and place them inside the directory you just created.
+
+       You don't have to copy all files from Github. The files you will need are inside the ``latest`` folder. In the end you must have the following files and directories in your Inkscape extension directory.
+
+       **LaTeX users:** You can add macros to ``inkscapeMadeEasy/basicLatexPackages.tex``. In this case the same macros will be accessible by all plugins that employ inkscapeMadeEasy.
 
 ```
-inkscape/extensions/
-            |-- inkscapeMadeEasy_Base.py
-            |-- inkscapeMadeEasy_Draw.py
-            |-- inkscapeMadeEasy_Plot.py
-            |-- textextLib
-            |   |-- __init__.py
-            |   |-- basicLatexPackages.tex
-            |   |-- textext.inx
-            |   |-- textext.py
-            |
-            |-- polarAxes2D.py
-            `-- polarAxes2D.inx
+        inkscape
+         ┣━━extensions
+         ┋   ┣━━ inkscapeMadeEasy      <-- inkscapeMadeEasy folder
+             ┃    ┣━━ inkscapeMadeEasy_Base.py
+             ┃    ┣━━ inkscapeMadeEasy_Draw.py
+             ┃    ┣━━ inkscapeMadeEasy_Plot.py
+             ┃    ┗━━ basicLatexPackages.tex
+             ┃
+             ┣━━ textext               <-- texText folder (if you installed textText)
+             ┃    ┋
+             ┃
+             ┣━━ polarAxes2D        <-- polarAxes2D folder
+             ┋    ┣━━ polarAxes2D.inx
+                  ┗━━ polarAxes2D.py
+        
+        NOTE: You might have other sub folders inside the extensions directory. They don't interfere with the plugin.
 ```
 
-**Disabling LaTeX support of inkscapeMadeEasy**
+## Installation procedure (v0.9x only)
 
-Many of the methods implemented in inkscapeMadeEasy project use LaTeX to generate text. To this end I decided to employ the excellent extension **textext** from Pauli Virtanen  <https://pav.iki.fi/software/textext/>. 
+**polarAxes2D** was developed using Inkscape 0.48 and 0.91 in Linux (Kubuntu 18.04). It should work in different OSs too as long as all requirements are met.
 
-LaTeX support via textext extension requires LaTeX typesetting system in your computer (it's free and awesome! =] ).
+1. Install [inkscapeMadeEasy](https://github.com/fsmMLK/inkscapeMadeEasy), **version 1.0** (latest). Follow the instructions in the manual page. **Note:** LaTeX text is used in **polarAxes2D** if the support is activated (nicer results), otherwise regular text elements will be used.
 
-Since many people don't use LaTeX and/or don't have it installed, inkscapeMadeEasy's LaTeX support is now optional. **By default, LaTeX support is ENABLED.**
+2. **polarAxes2D** installation
 
-Please refer to <https://fsmmlk.github.io/inkscapeMadeEasy/#installation-and-requirements> on how to easily disable LaTeX support.
+    1. Go to Inkscape's extension directory with a file browser.
 
+    2. Download **polarAxes2D** files and place them inside the directory you just created.
+
+       You don't have to copy all files from Github. The files you will need are inside the ``0.9x`` folder. In the end you must have the following files and directories in your Inkscape extension directory.
+
+        ```
+        inkscape
+         ┣━━ extensions
+         ┋    ┣━━ inkscapeMadeEasy_Base.py
+              ┣━━ inkscapeMadeEasy_Draw.py
+              ┣━━ inkscapeMadeEasy_Plot.py
+              ┃
+              ┣━━ textextLib
+              ┃    ┣━━ __init__.py
+              ┃    ┣━━ basicLatexPackages.tex
+              ┃    ┣━━ textext.inx
+              ┃    ┗━━ textext.py
+              ┃
+              ┣━━ polarAxes2D.inx        <--   from repository folder 0.9x!
+              ┗━━ polarAxes2D.py         <--
+        ```
 
 # Usage
 
 The extension can be found under `extensions > fsmMLK > Plot 2D > Polar` menu.
-'
-This extension is presented in two tabs, **R axis** and  **Theta axis**. They are used to configure independently the axes of your chart. The tabs have most of the same control elements, with the exception of a few elements exclusive to R axis.
 
-<img src="docs/images/Config_Raxis.png" width="700px"/>
+This extension is presented in one tab, **Specification**.
 
-<img src="docs/images/Config_Taxis.png" width="600px"/>
+<img src="docs/images/specification_Tab.png" width="450px"/>
+
+**General aspect factor:** General aspect ratio between line widths and text height. I designed this extension to have an overall aspect ratio that "looks nice". It is a function of R tick length. With this control you can scale both line width and text height. The defauls value is 1.0.
+
+<img src="docs/images/generalAspectRatio.png" width="700px"/>
 
 
-**R axis label (R axis only):** label of the R axis. This string must be LaTeX compatible. Any LaTeX commands or environments are valid. If you want to write in mathematical environment, enclose your text with $...$. You don't have to escape any backslashes.
+### R and Theta axes subtab
 
-> Tip: Since `siunitx` package is included in basicLatexPackages.tex file by default in inkscapeMadeEasy, you can use any unit command available there 
+This tab has two pages, one for each axis. They affect the axes the same way, with a few exceptions, presented below.
 
-Ex: `Foobar $\sqrt{x^2}$ so fancy! (\si{\newton\per\squaremetre})`
+**Limits:** Set the range of values. On the side there are two fields for the lower and upper limits.
 
-<img src="docs/images/Legend_01.png" width="400px"/>
+The extension will inform if these limits are invalid.
 
-**R/Theta min and max:** Set the limits of the axes. The extension will inform if these limits are invalid.
-  
   - The upper limit must be greater than the lower limit
   - If logarithmic scale is checked (R axis only), then the limits must be greater than 1.0
   - If logarithmic scale is checked (R axis only), then the lower limit will be rounded down to the nearest power of 10 and the upper rounded up to the nearest power of 10 in order to complete the decades. Ex: 1.2 to 12, then the limits will be rounded to 1 to 100
   - In theta direction, the values must be in degrees.
 
-**Logarithmic scale (R axis only):** Set the axis to be represented in log10 scale. In such case, the limits of the axis must be both greater than one.
+**Label (R axis only):** label of the axes. If LaTeX support is activated and you want to write in mathematical environment, enclose your text with $...$.
 
-**Add grid to R/Theta axis:** Draw grid lines in R or Theta axes.
-   - *linear scale:* The grid lines will be placed at each tick mark
-   - *logarithmic scale:* The grid lines will be placed dividing each decade in 10 parts
+> Tip: Since `siunitx` package is included in inkscapeMadeEasy's basicLatexPackages.tex, you can use any unit command available there too!
 
-**Add ticks to R/Theta axis:** Draw tick marks with associated values in R or Theta axes.
+> Ex: `Foobar $\sqrt{x^2}$ so fancy! (\si{\newton\per\squaremetre})`
 
-**R/Theta tick step:** Tick marks interval in units of your chart. This value is not referenced to  in logarithmic scale. In theta direction, the values must be in degrees.
+<img src="docs/images/Legend_01.png" width="400px"/>
+
+**Log scale (R axis only):** Set the axis to be represented in log10 scale. In such case, the limits of the axis must be both greater than zero.
+
+**Add grid:** Draw grid lines.
+
+   - *linear scale:* The grid lines will be placed at the tick marks.
+   - *log scale (R axis only):* The grid lines will be placed dividing each decade in 10 parts
+
+**Add ticks:** Draw tick marks with associated values. 
+
+**Tick step:** Tick mark interval, in units of your chart. This option does not affect log scale. In theta direction, the values must be in degrees.
 
 Ex: limits from 0 to 2, with tick step of 0.5 will produce ticks at 0, 0.5, 1, 1.5, 2
 
@@ -89,32 +156,25 @@ Ex: limits from 0 to 2, with tick step of 0.5 will produce ticks at 0, 0.5, 1, 1
 >
 > Examples
 >
-> <img src="docs/images/TickStep.png" width="600px"/>
+> <img src="docs/images/TickStep.png" width="500px"/>
 
+**Tick length (R axis only)** The distance between tick marks, in units of your canvas. See image below.
 
-**R tick length (R axis only)** The distance between the tick marks, in px.
-   - *linear scale:* The distance between ticks in px.
-   - *logarithmic scale:* The size of each decade in px.
+<img src="docs/images/TickLength.png" width="350px"/>
 
-<img src="docs/images/TickLength.png" width="500px"/>
+**Tick suffix (R axis only):** Optional extra suffix to be added to tick text. **LaTeX support enabled**: You can use any LaTeX text/commands valid in mathematical environment. You don't have to enclose your text between $...$.
 
-**R tick suffix value (R axis only):** Optional extra suffix to be added to the tick values. You can use any LaTeX text/commands valid in mathematical environment $...$. You don't have to enclose your text between $...$. You don't have to escape any backslashes.
+**Atention**: the values appended to tick mark text will NOT affect input/output limits!
 
 <img src="docs/images/TickSuffix.png" width="500px"/>
 
-**General aspect factor:** (present in R axis tab only) General aspect ratio between line width and text width. I designed this extension to have an overall aspect ratio that looked nice to my eyes. It is a function of R tick length. With this control you can scale both line widths and text height to fit your needs.
 
-<img src="docs/images/generalAspectRatio.png" width="700px"/>
 
 # Observations
  - The Radius must be positive
  - The limits of Theta are bounded between 0 and 360 degrees
  - Angle indication is in degrees.
- - The axes will be created at the center of your screen.
-
-# Examples
-
-<img src="docs/images/Examples.png" width="900px"/>
+ - The axes will be created in the center of your screen.
 
 # To do
 

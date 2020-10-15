@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<inkscape-extension xmlns="http://www.inkscape.org/namespace/inkscape/extension">
+    <name>Polar axes</name>
+    <id>fsmMLK.polarAxes2D</id>
+    <dependency type="executable" location="inx">polarAxes2D.py</dependency>
+    <dependency type="executable" location="extensions">inkscapeMadeEasy/inkscapeMadeEasy_Base.py</dependency>
+    <dependency type="executable" location="extensions">inkscapeMadeEasy/inkscapeMadeEasy_Draw.py</dependency>
+    <dependency type="executable" location="extensions">inkscapeMadeEasy/inkscapeMadeEasy_Plot.py</dependency>
+    <param name="tab" type="notebook">
+        <page name="Axes configuration" appearance="minimal" gui-text="Specification">
+            <hbox>
+                <vbox>
+                    <param name="generalAspectFactor" type="float" precision="2" min="0.01" max="100" gui-text="General aspect factor (default: 1.0):">1</param>
+                    <param name="subtab_axis" type="notebook">
+                        <page name="Raxis" appearance="minimal" gui-text="R axis">
+                            <hbox>
+                                <param name="rMin" type="float" min="0" max="100000" precision="3" gui-text="Limits:">0</param>
+                                <param name="rMax" type="float" min="0" max="100000" precision="3" gui-text="">6</param>
+                            </hbox>
+                            <param name="rLabel" type="string" gui-text="Label:">$R$</param>
+                            <hbox>
+                                <vbox>
+                                    <param name="rLog10scale" type="bool" gui-text="Log scale">false</param>
+                                    <param name="rGrid" type="bool" gui-text="Add grid">true</param>
+                                    <param name="rTicks" type="bool" gui-text="Add ticks">true</param>
+                                </vbox>
+                                <spacer/>
+                                <separator/>
+                                <spacer/>
+                                <vbox>
+                                    <param name="rTickStep" type="float" min="0" max="2000" precision="3" gui-text="Tick step²:">1</param>
+                                    <param name="rScale" type="float" min="5" max="2000" precision="1" gui-text="Tick length³:">50</param>
+                                    <param name="rExtraText" type="string" gui-text="Tick sufix¹:"></param>
+                                </vbox>
+                            </hbox>
+                        </page>
+                        <page name="Taxis" appearance="minimal" gui-text="Theta axis">
+                            <hbox>
+                                <param name="tMin" type="float" min="0" precision="3" max="360" gui-text="Limits (deg):">-1</param>
+                                <param name="tMax" type="float" min="0" precision="3" max="360" gui-text="">1</param>
+                            </hbox>
+                            <hbox>
+                                <vbox>
+                                    <param name="tGrid" type="bool" gui-text="Add grid">true</param>
+                                    <param name="tTicks" type="bool" gui-text="Add ticks">true</param>
+                                </vbox>
+                                <spacer/>
+                                <separator/>
+                                <spacer/>
+                                <vbox>
+                                    <param name="tTickStep" type="float" min="0" max="2000" precision="3" gui-text="Tick step (deg):">1</param>
+                                </vbox>
+                            </hbox>
+                        </page>
+                    </param>
+                </vbox>
+            </hbox>
+            <label>¹ LaTeX: text will be in inline math mode $...$.</label>
+            <label>² linear axis only</label>
+            <label>³ or the length of 1 decade in log scale</label>
+        </page>
+
+
+        <page name="Help" gui-text="Help">
+            <label>For details please refer to</label>
+            <label appearance="url">https://github.com/fsmMLK/inkscapePolarAxes2D</label>
+        </page>
+    </param>
+    <effect>
+        <object-type>all</object-type>
+        <effects-menu>
+            <submenu name="fsmMLK">
+                <submenu name="Plot 2D">
+                    <submenu name="Polar"/>
+                </submenu>
+            </submenu>
+        </effects-menu>
+    </effect>
+    <script>
+        <command location="inx" interpreter="python">polarAxes2D.py</command>
+    </script>
+</inkscape-extension>
