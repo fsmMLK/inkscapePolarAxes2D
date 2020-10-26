@@ -15,7 +15,7 @@
                         <page name="Raxis" appearance="minimal" gui-text="R axis">
                             <hbox>
                                 <param name="rMin" type="float" min="0" max="100000" precision="3" gui-text="Limits:">0</param>
-                                <param name="rMax" type="float" min="0" max="100000" precision="3" gui-text="">6</param>
+                                <param name="rMax" type="float" min="0" max="100000" precision="3" gui-text=" ">6</param>
                             </hbox>
                             <param name="rLabel" type="string" gui-text="Label:">$R$</param>
                             <hbox>
@@ -37,7 +37,7 @@
                         <page name="Taxis" appearance="minimal" gui-text="Theta axis">
                             <hbox>
                                 <param name="tMin" type="float" min="0" precision="3" max="360" gui-text="Limits (deg):">-1</param>
-                                <param name="tMax" type="float" min="0" precision="3" max="360" gui-text="">1</param>
+                                <param name="tMax" type="float" min="0" precision="3" max="360" gui-text=" ">1</param>
                             </hbox>
                             <hbox>
                                 <vbox>
@@ -59,8 +59,6 @@
             <label>² linear axis only</label>
             <label>³ or the length of 1 decade in log scale</label>
         </page>
-
-
         <page name="Help" gui-text="Help">
             <label>For details please refer to</label>
             <label appearance="url">https://github.com/fsmMLK/inkscapePolarAxes2D</label>
